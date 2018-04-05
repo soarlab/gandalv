@@ -1,5 +1,7 @@
 
-##Hello World
+# Universal Regressions
+
+## Hello World
 
 `hello`
 
@@ -7,7 +9,7 @@
 print "Hello, World"
 ```
 
-##Basic Computation
+## Basic Computation
 
 `compute`
 
@@ -18,7 +20,7 @@ z = x + y
 assert(z == 30)
 ```
 
-##Function Call
+## Function Call
 
 `function`
 
@@ -35,7 +37,7 @@ assert(cap(2) == 2)
 assert(cap(15) == 10)
 ```
 
-##For Loop
+## For Loop
 
 `forloop`
 
@@ -46,9 +48,9 @@ for (int i = 0; i < 10; i++) {
 }
 
 assert(x == 50)
-``
+```
 
-##Fibonacci Sequence
+## Fibonacci Sequence
 
 `fib`
 
@@ -64,7 +66,7 @@ assert(fib(5) == 5)
 assert(fib(6) == 8)
 ```
 
-##Compound Type
+## Compound Type
 
 `compound`
 
@@ -79,7 +81,7 @@ assert(p.x == 2)
 assert(p.y == 3)
 ```
 
-##Array
+## Array
 
 `array`
 
@@ -89,9 +91,9 @@ array[0] = 3
 assert(array[0] == 3)
 ```
 
-#Language-Specific Benchmarks
+# Language-Specific Benchmarks
 
-##Pointer
+## Pointer
 
 `pointer`
 
@@ -100,7 +102,7 @@ pointer = new box(3)
 assert(get(pointer) == 3)
 ```
 
-##Method Call
+## Method Call
 
 `method`
 
@@ -124,7 +126,7 @@ assert(car.milageLeft(250,000) == 50,000)
 
 ```
 
-##Dynamic Dispatch
+## Dynamic Dispatch
 
 `dynamic`
 
@@ -148,7 +150,7 @@ assert(fish.numTails() == 1)
 assert(beta.numTails() == 2)
 ```
 
-##Inout Parameter
+## Inout Parameter
 
 `inout`
 
@@ -162,9 +164,9 @@ addFive(z);
 assert(z == 7);
 ```
 
-#Future Regressions
+# Future Regressions
 
-##Function Overload
+## Function Overload
 
 `overload`
 
@@ -181,4 +183,4 @@ assert(sum(2,2) == 4);
 assert(sum(2,3,4) == 9);
 ```
 
-##Generic Type
+## Generic Type
