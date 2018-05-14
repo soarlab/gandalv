@@ -186,6 +186,7 @@ def main():
                       help="sets the logging level (DEBUG, INFO, WARNING)")
   parser.add_argument("--output-log", action="store", dest="log_path", type=str,
                       help="sets the output log path. (std out by default)")
+  parser.add_argument("--file-extension", action="store", dest="file_extension", default="c", type=str, help="type of files that should be tested")
   args = parser.parse_args()
 
   if args.exhaustive:
@@ -218,7 +219,7 @@ def main():
 
     # start processing the tests.
     results = []
-    for test in sorted(glob.glob("./" + args.folder + "/*.c")):
+    for test in sorted(glob.glob("./" + args.folder + "/*." + args.file_extension)):
       # get the meta data for this test
       print(test);
       meta = metadata(test)
