@@ -1,6 +1,8 @@
 
 #include "smack.h" //<assert.h>
 
+// @expect verified
+
 int cap(int x) {
     int y = x;
     if (10 < x) {

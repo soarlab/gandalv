@@ -1,6 +1,8 @@
 
 #include "smack.h" //"assert.h"
 
+// @expect verified
+
 struct Location {
     int x;
 };
@@ -10,4 +12,5 @@ int main(void) {
     l.x = 3;
 
     assert(l.x == 3);
+    reutrn 0;
 }
