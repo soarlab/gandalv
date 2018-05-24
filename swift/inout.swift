@@ -1,4 +1,4 @@
-
+// @expect verified
 
 func addFive(_ x: inout Int) {
     x += 5

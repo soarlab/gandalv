@@ -1,4 +1,4 @@
-
+! @expect verified
 
 program main
   use smack

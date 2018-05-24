@@ -1,8 +1,7 @@
+// @expect verified
 
 #include <stdio.h>
 #include "smack.h"
-
-// @expect verified
 
 int main(void) {
     printf("Hello World!\n");

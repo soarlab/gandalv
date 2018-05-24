@@ -1,3 +1,4 @@
+// @expect verified
 
 #include <smack.h>//<cassert>
 

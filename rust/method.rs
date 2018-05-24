@@ -1,3 +1,4 @@
+// @expect verified
 
 struct Car;
 

@@ -1,7 +1,6 @@
+// @expect verified
 
 #include "smack.h" //<assert.h>
-
-// @expect verified
 
 int cap(int x) {
     int y = x;

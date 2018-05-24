@@ -1,3 +1,4 @@
+// @expect verified
 
 fn fib(n: usize) -> usize {
     match n {

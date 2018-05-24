@@ -1,7 +1,6 @@
+// @expect verified
 
 #include "smack.h" //"assert.h"
-
-// @expect verified
 
 struct Location {
     int x;

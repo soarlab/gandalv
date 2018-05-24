@@ -1,9 +1,7 @@
+// @expect verified
+// @flag --unroll=10
 
 #include "smack.h" //<assert.h>
-
-// @expect verified
-
-// @flag --unroll=10
 
 int main(void) {
     int x = 0;

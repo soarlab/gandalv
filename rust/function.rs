@@ -1,3 +1,4 @@
+// @expect verified
 
 fn cap(x: usize) -> usize {
     let mut y = x;

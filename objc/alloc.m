@@ -1,3 +1,4 @@
+// @expect verified
 
 #import <Foundation/Foundation.h>
 //#include "smack.h"

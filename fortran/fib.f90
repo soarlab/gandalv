@@ -1,3 +1,4 @@
+! @expect verified
 
 recursive function fib(n)
   integer, intent(in) :: n

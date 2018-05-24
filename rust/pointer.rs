@@ -1,3 +1,4 @@
+// @expect verified
 
 fn main() {
     //let b = Box::new(3);

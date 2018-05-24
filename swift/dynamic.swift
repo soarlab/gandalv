@@ -1,3 +1,4 @@
+// @expect verified
 
 class Fish {
   func numTails() -> Int {

@@ -1,3 +1,6 @@
+// @expect verified
+
+import smack;
 
 void addFive(int * p) {
     *p = *p + 5;

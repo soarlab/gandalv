@@ -1,3 +1,4 @@
+// @expect verified
 
 #include <stdlib.h>
 #include <cassert>

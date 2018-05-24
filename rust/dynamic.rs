@@ -1,3 +1,4 @@
+// @expect verified
 
 trait Tailed {
     fn num_tails(&self) -> isize;

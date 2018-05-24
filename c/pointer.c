@@ -1,8 +1,7 @@
+// @expect verified
 
 #include <stdlib.h>
 #include "smack.h"//<assert.h>
-
-// @expect verified
 
 int main(void) {
     int *ptr = malloc(sizeof(int));

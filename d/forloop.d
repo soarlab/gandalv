@@ -1,3 +1,7 @@
+// @expect verified
+// @flag --unroll=11
+
+import smack;
 
 void main() {
 	int x = 0;

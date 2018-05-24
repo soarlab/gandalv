@@ -1,3 +1,4 @@
+// @expect verified
 
 let pointer = UnsafeMutablePointer<UInt8>.allocate(capacity: 1);
 pointer.initialize(to: 3)

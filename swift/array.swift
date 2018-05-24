@@ -1,3 +1,4 @@
+// @expect verified
 
 var array = [0]
 array[0] = 3

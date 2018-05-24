@@ -1,8 +1,7 @@
+// @expect verified
 
 #include "smack.h"//"assert.h"
 #include "stdio.h"
-
-// @expect verified
 
 void addFive(int * p) {
     *p = *p + 5;

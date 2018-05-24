@@ -1,3 +1,4 @@
+// @expect verified
 
 var x = 0
 for i in 0..<10 {

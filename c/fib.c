@@ -1,9 +1,7 @@
+// @expect verified
+// @flag --unroll=10
 
 #include "smack.h" //<assert.h>
-
-// @expect verified
-
-// @flag --unroll=10
 
 int fib(int n) {
     if (n <= 0) return 0;

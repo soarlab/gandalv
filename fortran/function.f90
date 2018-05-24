@@ -1,3 +1,5 @@
+! @expect verified
+
 pure function cap(x)
   integer, intent(in) :: x
   integer :: y

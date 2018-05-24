@@ -1,3 +1,4 @@
+! @expect verified
 
 subroutine addfive(x)
   implicit none

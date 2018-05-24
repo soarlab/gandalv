@@ -1,3 +1,4 @@
+// @expect verified
 
 func myFunction(_ val: Int) -> Int {
 	var x = 3

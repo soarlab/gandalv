@@ -1,3 +1,5 @@
+// @expect verified
+
 #import <Foundation/Foundation.h>
 
 int main(void) {

@@ -1,3 +1,6 @@
+// @expect verified
+
+import smack;
 
 int cap(int x) {
 	int y = x;

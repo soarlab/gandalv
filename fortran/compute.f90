@@ -1,3 +1,5 @@
+! @expect verified
+
 program compute
   use smack
   integer :: x,y,z

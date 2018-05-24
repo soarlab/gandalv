@@ -1,3 +1,6 @@
+// @expect verified
+
+import smack;
 
 class Fish {
     this() {}

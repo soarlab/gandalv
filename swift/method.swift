@@ -1,3 +1,4 @@
+// @expect verified
 
 class Car {
     func numWheels() -> Int {

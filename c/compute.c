@@ -1,7 +1,6 @@
+// @expect verified
 
 #include "smack.h" //<assert.h>
-
-// @expect verified
 
 int main(void) {
     int x = 10;

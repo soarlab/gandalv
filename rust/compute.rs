@@ -1,3 +1,4 @@
+// @expect verified
 
 fn main() {
     let x = 10;

@@ -1,3 +1,4 @@
+// @expect verified
 
 struct Point {
    x: isize,

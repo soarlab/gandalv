@@ -1,3 +1,4 @@
+// @expect verified
 
 #[macro_use]
 mod smack;
