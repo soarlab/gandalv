@@ -1,4 +1,5 @@
 // @expect verified
+// @flag --unroll=10
 
 #import <Foundation/Foundation.h>
 #include "smack.h"

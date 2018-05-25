@@ -1,4 +1,5 @@
 // @expect verified
+// @flag --unroll=11
 
 #include <smack.h>//<cassert>
 

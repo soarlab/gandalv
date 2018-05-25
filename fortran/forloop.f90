@@ -1,4 +1,5 @@
 ! @expect verified
+! @flag --unroll=11
 
 program main
   use smack

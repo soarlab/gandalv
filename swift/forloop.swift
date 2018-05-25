@@ -1,4 +1,5 @@
 // @expect verified
+// @flag --unroll=11
 
 var x = 0
 for i in 0..<10 {

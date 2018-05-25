@@ -1,4 +1,5 @@
 ! @expect verified
+! @flag --unroll=10
 
 recursive function fib(n)
   integer, intent(in) :: n

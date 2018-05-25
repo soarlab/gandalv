@@ -1,4 +1,5 @@
 // @expect verified
+// @flag --unroll=10
 
 fn fib(n: usize) -> usize {
     match n {

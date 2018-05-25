@@ -1,4 +1,5 @@
 // @expect verified
+// @flag --unroll=11
 
 fn main() {
     let mut x = 0;

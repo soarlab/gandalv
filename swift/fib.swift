@@ -1,4 +1,5 @@
 // @expect verified
+// @flag --unroll=10
 
 func fib(_ n: Int) -> Int {
     if n <= 0 { return 0 }
