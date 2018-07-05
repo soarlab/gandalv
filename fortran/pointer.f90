@@ -7,5 +7,5 @@ program main
   integer, target :: x = 3
   box => x
   print *, box == 3
-  call assert(box /= 3)
+  call assert(box == 3)
 end program main

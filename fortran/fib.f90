@@ -2,7 +2,9 @@
 ! @flag --unroll=10
 
 recursive function fib(n)
+  implicit none
   integer, intent(in) :: n
+  integer :: fib
   if (n <= 0) then
     fib = 0
   else if (n == 1) then
@@ -19,8 +21,8 @@ program main
   !print *, fib(5) == 5
   !print *, fib(6) == 8 
   integer :: z
-  z = fib(2)
-  call assert(z > 18)
-  !call assert(fib(5) == 5)
-  !call assert(fib(6) == 8)
+  !z = fib(2)
+  !call assert(z > 18)
+  call assert(fib(5) == 5)
+  call assert(fib(6) == 8)
 end program main

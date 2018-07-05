@@ -7,5 +7,5 @@ program compute
   y=20
   z=x+y
   !print *, z == 30
-  call assert(0)
+  call assert(z == 30)
 end

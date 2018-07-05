@@ -1,6 +1,7 @@
 // @expect verified
 
 #import <Foundation/Foundation.h>
+#include "smack.h"
 
 int main(void) {
 	NSArray *empty = [NSArray array];
