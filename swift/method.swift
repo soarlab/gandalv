@@ -9,12 +9,12 @@ class Car {
         return 2
     }
 
-    func milageLeft(miles: Int) -> Int {
-        return 300_000 - miles
-    }
+//    func milageLeft(miles: Int) -> Int {
+//        return 300_000 - miles
+//    }
 }
 
 let car = Car()
 __VERIFIER_assert(car.numWheels() == 4)
-__VERIFIER_assert(car.numHeadlights() == 2)
-__VERIFIER_assert(car.milageLeft(miles: 250_000) == 50_000)
+//__VERIFIER_assert(car.numHeadlights() == 2)
+//__VERIFIER_assert(car.milageLeft(miles: 250_000) != 50_000)

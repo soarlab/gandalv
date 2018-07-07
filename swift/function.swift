@@ -1,14 +1,12 @@
 // @expect verified
 
-func myFunction(_ val: Int) -> Int {
-	var x = 3
-	if val < 5 {
-		x = 5
+func cap(_ x: Int) -> Int {
+	var y = x
+	if 10 < x {
+		y = 10
 	}
-	return x
+	return y
 }
 
-let three = myFunction(10)
-let five = myFunction(1)
-__VERIFIER_assert(three == 3)
-__VERIFIER_assert(five == 5)
+__VERIFIER_assert(cap(2) == 2)
+__VERIFIER_assert(cap(15) != 10)

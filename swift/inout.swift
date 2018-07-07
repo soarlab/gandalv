@@ -7,4 +7,4 @@ func addFive(_ x: inout Int) {
 var z = 2
 addFive(&z)
 
-__VERIFIER_assert(z != 7)
+__VERIFIER_assert(z == 7)

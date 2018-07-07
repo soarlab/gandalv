@@ -20,14 +20,14 @@
     return 4;
 }
 
-- (int)numWindows
+- (int)numHeadlights
 {
-    return 6;
+    return 2;
 }
 
-- (int)numWindowsForSide:(int)side
+- (int)milageLeft:(int)miles
 {
-    return 3;
+    return 300000 - miles;
 }
 
 @end
@@ -36,7 +36,7 @@ int main(void) {
     Car *c = [[Car alloc] init];
     
     assert([c numWheels] == 4);
-    assert([c numHeadlights] == 6);
+    assert([c numHeadlights] == 2);
     assert([c milageLeft:250000] == 50000);
     return 0;
 }
