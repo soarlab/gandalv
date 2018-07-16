@@ -1,7 +1,7 @@
 // @expect verified
 
 #import <Foundation/Foundation.h>
-#include "smack.h"
+//#include "smack.h"
 
 @interface Compute : NSObject
 
