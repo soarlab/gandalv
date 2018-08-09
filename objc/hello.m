@@ -5,5 +5,6 @@
 int main(void)
 {
     NSLog(@"Hello, World!");
+	assert(true);
     return 0;
 }
