@@ -19,6 +19,9 @@ program main
   integer :: cap
   call assert(cap(2) == 2)
   call assert(cap(15) == 10)
+  integer :: x
+  x = __VERIFIER_nondet_int()
+  call assert(cap(x) <= 10)
 end program main
 
 

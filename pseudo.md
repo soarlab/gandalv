@@ -35,6 +35,8 @@ function cap(x: int) -> int {
 
 assert(cap(2) == 2)
 assert(cap(15) == 10)
+x = __VERIFIER_nondet_int()
+assert(cap(x) <= 10)
 ```
 
 ## For Loop
@@ -162,6 +164,11 @@ function addFive(inout x: int) {
 int z = 2;
 addFive(z);
 assert(z == 7);
+
+int x = __VERIFIER_nondet_int()
+assume(0 < x)
+addFive(x)
+assert(5 < x)
 ```
 
 # Future Regressions

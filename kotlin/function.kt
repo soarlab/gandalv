@@ -12,4 +12,6 @@ fun cap(x: Int): Int {
 fun main(args: Array<String>) {
     __smack_assert(cap(2) == 2)
     __smack_assert(cap(15) == 10)
+    var x = __VERIFIER_nondet_int();
+    __smack_assert(cap(x) <= 10);
 }

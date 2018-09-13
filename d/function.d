@@ -13,4 +13,7 @@ int cap(int x) {
 void main() {
 	assert(cap(2) == 2);
 	assert(cap(15) == 10);
+
+	int x = __VERIFIER_nondet_int();
+	assert(cap(x) <= 10);
 }
