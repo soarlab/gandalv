@@ -72,7 +72,7 @@ def main():
       if parts[-1] in ['f', 'f90', 'f95', 'for', 'f03']: #fortran
         repl = "/="
       elif parts[-1] is 'rs': #rust
-        sert = "assert!"
+        sert = "assert\!"
         continue
 
       if parts[-2] == 'hello':
