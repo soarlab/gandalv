@@ -42,6 +42,10 @@ def invert_assertions(filename,original="==",replacement="!=",assertion="assert"
     i += 1
 
 def main():
+  if len(sys.argv) < 2:
+    print("Usage: \npython invert_assertions.py [folder_name]")
+    sys.exit()
+
   reg_list = [
       'hello',
       'compute',
@@ -59,8 +63,9 @@ def main():
   folder = sys.argv[1]
   os.chdir(folder)
   for src_file in os.listdir('.'): # current directory, which we just changed into
-    if not os.path.isfile('.' + src_file):
+    if not os.path.isfile('./' + src_file):
       continue
+
     parts = src_file.split('.')
     reg_name = parts[-2]
     if reg_name in reg_list:
@@ -71,9 +76,8 @@ def main():
 
       if parts[-1] in ['f', 'f90', 'f95', 'for', 'f03']: #fortran
         repl = "/="
-      elif parts[-1] is 'rs': #rust
-        sert = "assert\!"
-        continue
+      elif parts[-1] in ['rs']: #rust
+        sert = r'assert\!'
 
       if parts[-2] == 'hello':
         orig = "true"

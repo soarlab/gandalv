@@ -28,7 +28,7 @@ int main(void) {
     int ten = [f cap:15];
     assert(two == 2);
     assert(ten == 10);
-	int x = __VERIFIER_nondet_int();
-	assert([f cap:x] <= 10);
+    int x = __VERIFIER_nondet_int();
+    assert([f cap:x] <= 10);
     return 0;
 }

@@ -7,5 +7,5 @@ use smack::*;
 fn main() {
     let mut array: Vec<isize> = vec![];
     array.push(3);
-    assert!(array[0] != 3);
+    assert!(array[0] == 3);
 }

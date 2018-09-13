@@ -2,4 +2,5 @@
 
 fn main() {
     println!("Hello World!");
+    assert!(true);
 }
