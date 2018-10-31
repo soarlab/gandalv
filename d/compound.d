@@ -15,6 +15,6 @@ class Point
 void main()
 {
     Point l = new Point(2,3);
-    assert(l.x == 2);
-    assert(l.y == 3);
+    __VERIFIER_assert(l.x == 2);
+    __VERIFIER_assert(l.y == 3);
 }

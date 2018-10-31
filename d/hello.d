@@ -2,10 +2,8 @@
 
 import smack;
 
-import std.stdio;
-
 void main()
 {
-	writeln("Hello World!");
+	__VERIFIER_assert(true);
 }
 

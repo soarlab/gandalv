@@ -9,5 +9,5 @@ void main() {
 		x += 5;
 	}
 	
-	assert(x != 50);
+	__VERIFIER_assert(x != 50);
 }

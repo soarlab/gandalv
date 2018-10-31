@@ -10,5 +10,5 @@ void main() {
     int *t = new int;
     *t = 2;
     addFive(*t);
-    assert(*t != 7);
+    __VERIFIER_assert(*t != 7);
 }

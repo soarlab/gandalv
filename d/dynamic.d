@@ -9,7 +9,7 @@ class Fish {
     }
 }
 
-class TwinTailBeta {
+class TwinTailBeta : Fish {
     this() {}
     override int numTails() {
         return 2;
@@ -21,6 +21,6 @@ void main()
     Fish fish = new Fish();
     TwinTailBeta beta = new TwinTailBeta();
 
-    assert(fish.numTails() == 1);
-    assert(beta.numTails() == 2);
+    __VERIFIER_assert(fish.numTails() == 1);
+    __VERIFIER_assert(beta.numTails() == 2);
 }

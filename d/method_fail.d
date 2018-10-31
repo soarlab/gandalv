@@ -19,5 +19,5 @@ class Car
 void main()
 {
     Car c = new Car();
-    assert(c.numWheels() != 4);
+    __VERIFIER_assert(c.numWheels() != 4);
 }

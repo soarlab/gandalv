@@ -7,5 +7,5 @@ void main()
 	int x = 10;
 	int y = 20;
 	int z = x + y;
-	assert(z != 30);
+	__VERIFIER_assert(z != 30);
 }

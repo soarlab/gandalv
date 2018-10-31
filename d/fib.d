@@ -17,6 +17,6 @@ int fib(int n)
 
 void main()
 {
-	assert(fib(5) == 5);
-	assert(fib(6) == 8);
+	__VERIFIER_assert(fib(5) == 5);
+	__VERIFIER_assert(fib(6) == 8);
 }
