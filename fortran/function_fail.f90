@@ -17,10 +17,10 @@ program main
   use smack
   implicit none
   integer :: cap
+  integer :: x
   call assert(cap(2) /= 2)
   call assert(cap(15) == 10)
-  integer :: x
-  x = __VERIFIER_nondet_int()
+  x = __verifier_nondet_int()
   call assert(cap(x) <= 10)
 end program main
 

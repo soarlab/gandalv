@@ -9,6 +9,6 @@ void addFive(int * p) {
 void main() {
     int *t = new int;
     *t = 2;
-    addFive(*t);
+    addFive(t);
     __VERIFIER_assert(*t != 7);
 }

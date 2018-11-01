@@ -1,4 +1,4 @@
-! @expect verified
+! @expect error 
 
 pure function cap(x)
   implicit none
@@ -21,7 +21,7 @@ program main
   call assert(cap(2) == 2)
   call assert(cap(15) == 10)
   x = __verifier_nondet_int()
-  call assert(cap(x) <= 10)
+  call assert(cap(x) > 10)
 end program main
 
 
