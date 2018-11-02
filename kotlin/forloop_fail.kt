@@ -7,5 +7,5 @@ fun main(args: Array<String>) {
         x += 5
     }
 
-    __smack_assert(x != 50)
+    __VERIFIER_assert(x != 50)
 }

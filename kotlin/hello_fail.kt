@@ -3,5 +3,5 @@ import assert.*
 
 fun main(args: Array<String>) {
     println("Hello World!");
-    __smack_assert(false);
+    __VERIFIER_assert(false);
 }

@@ -9,6 +9,6 @@ fun fib(n: Int): Int {
 }
 
 fun main(args: Array<String>) {
-    __smack_assert(fib(5) == 5)
-    __smack_assert(fib(6) == 8)
+    __VERIFIER_assert(fib(5) == 5)
+    __VERIFIER_assert(fib(6) == 8)
 }

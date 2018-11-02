@@ -17,6 +17,6 @@ fun main(args: Array<String>) {
     val fish = Fish()
     val beta = TwinTailBeta()
 
-    __smack_assert(fish.numTails() != 1)
-    __smack_assert(beta.numTails() == 2)
+    __VERIFIER_assert(fish.numTails() != 1)
+    __VERIFIER_assert(beta.numTails() == 2)
 }
