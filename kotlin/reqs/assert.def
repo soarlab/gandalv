@@ -1,0 +1,2 @@
+headers = assert.h
+compilerOpts = -std=c99
