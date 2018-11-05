@@ -1,5 +1,5 @@
-verifiers: [corral]
-memory: [no-reuse-impls]
+#verifiers: [corral]
+#memory: [no-reuse-impls]
 time-limit: 120
 memory-limit: 450
 flags: [--unroll=2]

@@ -19,6 +19,7 @@ import shlex
 
 OVERRIDE_FIELDS = ['verifiers', 'memory', 'time-limit', 'memory-limit', 'skip']
 APPEND_FIELDS = ['flags', 'checkbpl', 'checkout']
+DEFAULT_EXTENSIONS=['c', 'cpp', 'm', 'rs', 'f90', 'd', 'swift', 'kt']
 
 def bold(text):
   return '\033[1m' + text + '\033[0m'
@@ -84,13 +85,13 @@ def metadata(file):
       if match:
         m['expect'] = match.group(1).strip()
 
-      match = re.search(r'@checkbpl (.*)', line)
-      if match:
-        m['checkbpl'].append(match.group(1).strip())
+      #match = re.search(r'@checkbpl (.*)', line)
+      #if match:
+      #  m['checkbpl'].append(match.group(1).strip())
 
-      match = re.search(r'@checkout (.*)', line)
-      if match:
-        m['checkout'].append(match.group(1).strip())
+      #match = re.search(r'@checkout (.*)', line)
+      #if match:
+      #  m['checkout'].append(match.group(1).strip())
 
   if not m['skip']:
     if not 'expect' in m:
@@ -112,7 +113,7 @@ def process_test(cmd, test, memory, verifier, expect, checkbpl, checkout, log_fi
   :return: A tuple with the
   """
   str_result = "{0:>20}\n".format(test)
-  str_result += "{0:>20} {1:>10}    :".format(memory, verifier)
+  #str_result += "{0:>20} {1:>10}    :".format(memory, verifier)
 
   t0 = time.time()
   p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -120,18 +121,18 @@ def process_test(cmd, test, memory, verifier, expect, checkbpl, checkout, log_fi
   elapsed = time.time() - t0
   status = 0
 
-  bplfile = cmd[cmd.index('-bpl')+1]
-  with open(os.devnull, 'w') as devnull:
-    for f in checkbpl:
-      with open(bplfile) as bpl:
-        checker = subprocess.Popen(shlex.split(f), stdin=bpl, stdout=devnull, stderr=devnull)
-        checker.wait()
-        status = status or checker.returncode
+  #bplfile = cmd[cmd.index('-bpl')+1]
+  #with open(os.devnull, 'w') as devnull:
+  #  for f in checkbpl:
+  #    with open(bplfile) as bpl:
+  #      checker = subprocess.Popen(shlex.split(f), stdin=bpl, stdout=devnull, stderr=devnull)
+  #      checker.wait()
+  #      status = status or checker.returncode
 
-    for f in checkout:
-      checker = subprocess.Popen(shlex.split(f), stdin=subprocess.PIPE, stdout=devnull, stderr=devnull)
-      checker.communicate(input=out)
-      status = status or checker.returncode
+  #  for f in checkout:
+  #    checker = subprocess.Popen(shlex.split(f), stdin=subprocess.PIPE, stdout=devnull, stderr=devnull)
+  #    checker.communicate(input=out)
+  #    status = status or checker.returncode
 
   # get the test results
   result = get_result(out+err)
@@ -144,7 +145,7 @@ def process_test(cmd, test, memory, verifier, expect, checkbpl, checkout, log_fi
   else:
     str_result += red('FAILED ', log_file)
 
-  str_result += '  [%.2fs]' % round(elapsed, 2)
+  str_result += '  [%.2fs]\n' % round(elapsed, 2)
   return str_result
 
 passed = failed = timeouts = unknowns = 0
@@ -186,7 +187,7 @@ def main():
                       help="sets the logging level (DEBUG, INFO, WARNING)")
   parser.add_argument("--output-log", action="store", dest="log_path", type=str,
                       help="sets the output log path. (std out by default)")
-  parser.add_argument("--file-extension", action="store", dest="file_extension", default="c", type=str, help="type of files that should be tested")
+  parser.add_argument("--file-extensions", action="store", dest="file_extensions", nargs='+', default=DEFAULT_EXTENSIONS, help="type of files that should be tested")
   args = parser.parse_args()
 
   if args.exhaustive:
@@ -219,37 +220,38 @@ def main():
 
     # start processing the tests.
     results = []
-    for test in sorted(glob.glob("./" + args.folder + "/*." + args.file_extension)):
-      # get the meta data for this test
-      print(test);
-      meta = metadata(test)
+    for extn in args.file_extensions:
+      for test in sorted(glob.glob("./" + args.folder + "/*." + extn)):
+        # get the meta data for this test
+        print(test);
+        meta = metadata(test)
 
-      if meta['memory-limit'] > mem_total:
-        continue
+        if meta['memory-limit'] > mem_total:
+          continue
 
-      if meta['skip'] == True:
-        continue
+        if meta['skip'] == True:
+          continue
 
-      if meta['skip'] != False and not args.all_examples:
-        continue
+        if meta['skip'] != False and not args.all_examples:
+          continue
 
-      # build up the subprocess command
-      cmd = ['smack', test]
-      cmd += ['--time-limit', str(meta['time-limit'])]
-      cmd += meta['flags']
+        # build up the subprocess command
+        cmd = ['bash', os.path.dirname(test) + '/verify.sh', test]
+        cmd += ['--time-limit', str(meta['time-limit'])]
+        cmd += meta['flags']
 
-      for memory in meta['memory'][:100 if args.all_configs else 1]:
-        cmd += ['--mem-mod=' + memory]
+        #for memory in meta['memory'][:100 if args.all_configs else 1]:
+          #cmd += ['--mem-mod=' + memory]
 
-        for verifier in meta['verifiers'][:100 if args.all_configs else 1]:
-          name = path.splitext(path.basename(test))[0]
-          cmd += ['--verifier=' + verifier]
-          cmd += ['-bc', "%s-%s-%s.bc" % (name, memory, verifier)]
-          cmd += ['-bpl', "%s-%s-%s.bpl" % (name, memory, verifier)]
-          r = p.apply_async(process_test,
-                args=(cmd[:], test, memory, verifier, meta['expect'], meta['checkbpl'], meta['checkout'], args.log_path,),
-                callback=tally_result)
-          results.append(r)
+          #for verifier in meta['verifiers'][:100 if args.all_configs else 1]:
+            #name = path.splitext(path.basename(test))[0]
+            #cmd += ['--verifier=' + verifier]
+            #cmd += ['-bc', "%s-%s-%s.bc" % (name, memory, verifier)]
+            #cmd += ['-bpl', "%s-%s-%s.bpl" % (name, memory, verifier)]
+        r = p.apply_async(process_test,
+                  args=(cmd[:], test, None, None, meta['expect'], meta['checkbpl'], meta['checkout'], args.log_path,),
+                  callback=tally_result)
+        results.append(r)
 
     # keep the main thread active while there are active workers
     for r in results:
