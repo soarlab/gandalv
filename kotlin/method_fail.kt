@@ -17,6 +17,6 @@ fun main(args: Array<String>) {
     val car = Car()
     
     __VERIFIER_assert(car.numWheels() != 4)
-    __VERIFIER_assert(car.numHeadlights() != 2)
+    __VERIFIER_assert(car.numHeadlights() == 2)
     __VERIFIER_assert(car.milageLeft(250000) == 50000)
 }
