@@ -16,7 +16,7 @@ impl Car {
 
 fn main() {
     let c = Car;
-    assert\!(c.num_wheels() != 4);
+    assert!(c.num_wheels() != 4);
     assert!(c.num_headlights() == 2);
     assert!(c.milage_left(250000) == 50000);
 }

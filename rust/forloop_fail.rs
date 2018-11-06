@@ -7,5 +7,5 @@ fn main() {
         x += 5;
     }
 
-    assert\!(x != 10)
+    assert!(x != 10)
 }

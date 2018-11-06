@@ -8,5 +8,5 @@ fn main() {
     let mut val = 2;
     let x = &mut val;
     add_five(x);
-    assert\!(*x != 7);
+    assert!(*x != 7);
 }

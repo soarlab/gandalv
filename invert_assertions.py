@@ -77,7 +77,7 @@ def main():
       if parts[-1] in ['f', 'f90', 'f95', 'for', 'f03']: #fortran
         repl = "/="
       elif parts[-1] in ['rs']: #rust
-        sert = r'assert\!'
+        sert = r'assert!'
 
       if parts[-2] == 'hello':
         orig = "true"

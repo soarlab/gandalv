@@ -8,5 +8,5 @@ struct Point {
 fn main() {
     let p = Point { x: 2, y: 3 };
     assert!(p.x == 2);
-    assert\!(p.y != 3);
+    assert!(p.y != 3);
 }

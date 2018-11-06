@@ -10,7 +10,7 @@ impl Car {
         2
     }
     fn milage_left(&self, miles: isize) -> isize {
-        300000 - isize
+        300000 - miles
     }
 }
 

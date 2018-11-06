@@ -22,6 +22,6 @@ impl Tailed for TwinTailBeta {
 fn main() {
     let fish: &Tailed = &Fish;
     let beta: &Tailed = &TwinTailBeta;
-    assert\!(fish.num_tails() != 1);
+    assert!(fish.num_tails() != 1);
     assert!(beta.num_tails() == 2);
 }
