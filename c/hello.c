@@ -4,6 +4,6 @@
 #include "smack.h"
 
 int main(void) {
-    assert(true);
+    assert(1);
     return 0;
 }
