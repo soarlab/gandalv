@@ -1,7 +1,7 @@
-! @expect verified
+! @expect error
 
 program hello
   use smack
   implicit none
-  call assert(.TRUE.)
+  call assert(.FALSE.)
 end

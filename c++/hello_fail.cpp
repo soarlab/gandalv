@@ -5,7 +5,6 @@
 
 int main()
 {
-	std::cout << "Hello World!!" << "\n";
 	assert(false);
 	return 0;
 }
