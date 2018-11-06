@@ -1,3 +1,4 @@
+// @expect error
 
 import assert.*
 
